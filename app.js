@@ -7,9 +7,10 @@ app.configure(function() {
     app.use(express.static(__dirname + '/public'));
 });
 
-io.on('connection', function(socket) {
+io.sockets.on('connection', function(socket) {
 	console.log('user connected');
 	socket.on('msg:send', function(msg) {
+		socket.broadcast.emit('msg:sent', msg);
 		socket.emit('msg:sent', msg);
 	});
 });
