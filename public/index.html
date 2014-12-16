@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title>AngularJS CollabBoard</title>
+	<title>Socket Chat</title>
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
@@ -17,7 +17,7 @@
 	</ul>
 	<form id="send" class="form">
 		<div class="form-group">
-			<input class="form-control" type="text" ng-model="message" />
+			<input type="text" ng-model="message" />
 			<button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
 		</div>
 	</form>

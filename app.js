@@ -8,10 +8,17 @@ app.configure(function() {
 });
 
 io.sockets.on('connection', function(socket) {
-	console.log('user connected');
+	socket.broadcast.emit('user:connect', 'A user has connected');
 	socket.on('msg:send', function(msg) {
+		socket.broadcast.emit('user:notTyping');
 		socket.broadcast.emit('msg:sent', msg);
 		socket.emit('msg:sent', msg);
+	});
+	socket.on('user:typing', function(data) {
+		socket.broadcast.emit('user:typed', data)
+	});
+	socket.on('user:stoppedTyping', function() {
+		socket.broadcast.emit('user:notTyping');
 	});
 });
 

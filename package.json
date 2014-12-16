@@ -1,6 +1,6 @@
 {
-  "name": "angular-collab-board",
-  "description": "AngularJS Collobaration Board",
+  "name": "angular-socket-chat",
+  "description": "AngularJS Realtime Chat",
   "version": "0.0.1-1",
   "private": true,
   "dependencies": {
